@@ -7,7 +7,7 @@ spring:
       password: quddnrdl12
     secondary:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: jdbc:mysql://localhost:3306/school
+      jdbc-url: jdbc:h2:mem:testdb
       username: root
       password: quddnrdl12
   jpa:
