@@ -1,4 +1,5 @@
 rootProject.name = 'multi'
 include 'multidb'
 include 'twopc_skeleton'
+include 'saga_skeleton'
 
