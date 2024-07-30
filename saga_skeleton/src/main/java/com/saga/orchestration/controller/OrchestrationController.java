@@ -1,8 +1,8 @@
-package com.saga.choreography.controller;
+package com.saga.orchestration.controller;
 
-import com.saga.choreography.bank.KBBankService;
 import com.saga.choreography.bank.KakaoBankService;
 import com.saga.choreography.dto.Deduct;
+import com.saga.orchestration.orchestrator.BankingOrchestrator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/choreography")
-public class ChoreographyController {
-    private final KakaoBankService kakaoBankService;
+@RequestMapping("/orchestration")
+public class OrchestrationController {
+    private final BankingOrchestrator orchestrator;
 
     @PostMapping("/deduct")
     public void deduct(@RequestBody final Deduct deduct) {
-        kakaoBankService.deductAmount(deduct.amount());
+        orchestrator.transfer(deduct.amount());
     }
 }
